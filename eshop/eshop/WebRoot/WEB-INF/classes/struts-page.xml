@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="page" extends="json-default" namespace="/">
+	
+	  	<action name="Login*" class="com.nkl.page.action.LoginAction" method="{1}">
+	  		<result name="success" type="json">
+	  			<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">
+					success,data.*
+				</param>
+            </result>
+            <result name="error" type="json">
+            	<param name="ignoreHierarchy">false</param>
+			    <param name="includeProperties">
+					success,err.*
+				</param>
+			</result>
+	  	</action>
+	  	
+	  	<action name="page_*" class="com.nkl.page.action.IndexAction" method="{1}">
+	  		<result name="error">Error.jsp</result>
+	  		<result name="index">default.jsp</result>
+	  		<result name="goods">goods.jsp</result>
+	  		<result name="goodsHot">goodsHot.jsp</result>
+	  		<result name="goodsDetail">goodsDetail.jsp</result>
+	  		<result name="card">card.jsp</result>
+	  		<result name="ordersAdd">ordersAdd.jsp</result>
+	  		<result name="info">info.jsp</result>
+	  		<result name="infoDetail">infoDetail.jsp</result>
+	  		<result name="success" type="json">
+	  			<param name="ignoreHierarchy">false</param>
+            	<param name="includeProperties">
+					success,data.*
+				</param>
+            </result>
+            <result name="error2" type="json">
+            	<param name="ignoreHierarchy">false</param>
+			    <param name="includeProperties">
+					success,err.*
+				</param>
+			</result>
+			<result name="reg">reg.jsp</result>
+			<result name="userInfo">myInfo.jsp</result>
+	  		<result name="userPwd">myPwd.jsp</result>
+	  		<result name="ordersShow">ordersShow.jsp</result>
+	  		<result name="logisticsShow">logisticsShow.jsp</result>
+	  		<result name="ordersDetailShow">ordersDetailShow.jsp</result>
+	  		<result name="evaluateAdd">evaluateAdd.jsp</result>
+	  	</action>
+	  	 
+	</package>
+</struts>    
